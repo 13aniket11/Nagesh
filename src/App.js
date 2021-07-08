@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { Component, useRef, useState } from "react";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,6 +14,8 @@ import SwiperCore, {
   EffectCoverflow,Pagination,Autoplay
 } from 'swiper/core';
 
+import video from "./backgroundvideo/video.mp4";
+
 // install Swiper modules
 SwiperCore.use([EffectCoverflow,Pagination,Autoplay]);
 
@@ -21,6 +24,21 @@ export default function App() {
   return (
     
     <>
+    <video
+      autoPlay loop muted 
+      style={{
+        position:"absolute",
+        width:"100%",
+        left:"50%",
+        top:"50%",
+        height:"100%",
+        objectFit:"cover",
+        transform:"translate(-50%,-50%)",
+        zIndex:"-1"
+      }}
+    >
+      <source src={video} type="video/mp4" />
+    </video>
     <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} loop={true} 
       autoplay={{ delay: 2000, disableOnInteraction:false}}
     coverflowEffect={{
