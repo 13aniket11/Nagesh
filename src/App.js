@@ -22,14 +22,14 @@ export default function App() {
     
     <>
     <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} loop={true} 
-      autoplay={{ delay: 2000 }}
+      autoplay={{ delay: 2000, disableOnInteraction:false}}
     coverflowEffect={{
   "rotate": 60,
   "stretch": 0,
   "depth": 100,
   "modifier": 1,
   "slideShadows": true
-}} pagination={true} className="mySwiper">
+}} pagination={{dynamicBullets: true}} className="mySwiper">
   <SwiperSlide>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-1.jpg" class="image" />
