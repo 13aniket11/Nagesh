@@ -18,7 +18,7 @@ import SwiperCore, {
 import video from "./backgroundvideo/video.mp4";
 
 // import Modal
-import {Modal} from 'react-bootstrap';
+import {Button, Modal} from 'react-bootstrap';
 
 import Gallery from 'react-photo-gallery';
 
@@ -119,10 +119,11 @@ export default function App() {
       height: 1
     }
   ];
-  return (
-    
-    <>
 
+  return (
+
+    <>
+    
     <video
       autoPlay loop muted 
       style={{
@@ -156,7 +157,7 @@ export default function App() {
     <div class="overlay">Event 1</div>
     </div>  
   </SwiperSlide>
-  <Modal
+  <Modal class="modal" id="Modal"
       show={show} 
       onHide={modalClose}
       scrollable={true}
@@ -171,9 +172,12 @@ export default function App() {
         transform:"translate(100%,100%)",
       }}
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          <h1>Event 1 Photos</h1>
+      <Modal.Header>
+      <div class ="button-close">
+      <Button onClick={modalClose}>X</Button>
+      </div>
+        <Modal.Title>
+          <h1 class="center">Event 1 Photos</h1>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

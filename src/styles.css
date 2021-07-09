@@ -73,7 +73,17 @@ body {
 .modal {
   position: absolute;
   overflow-y:scroll;
-  width: 100%; left: 0; right: 0;
-  height: 100%; top: 0; bottom: 0;
+  width: 100%; left: 20; right: 20;
+  height: 100%; top: 20; bottom: 20;
   padding: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.button-close{
+  position: absolute;
+  right: 20px;
+  top: center;
 }
