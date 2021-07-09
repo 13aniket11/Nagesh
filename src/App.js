@@ -14,16 +14,115 @@ import SwiperCore, {
   EffectCoverflow,Pagination,Autoplay
 } from 'swiper/core';
 
+// import background video
 import video from "./backgroundvideo/video.mp4";
+
+// import Modal
+import {Modal} from 'react-bootstrap';
+
+import Gallery from 'react-photo-gallery';
+
+// import popup
+import 'reactjs-popup/dist/index.css';
 
 // install Swiper modules
 SwiperCore.use([EffectCoverflow,Pagination,Autoplay]);
 
 export default function App() {
-
+  const[show,popup]=useState(false);
+  const modalOpen = () => popup(true);
+  const modalClose = () => popup(false);
+  const PHOTO_SET = [
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-10.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-3.jpg',
+      width: 20,
+      height: 20
+    },
+    {
+      src: 'https://swiperjs.com/demos/images/nature-6.jpg',
+      width: 1,
+      height: 1
+    }
+  ];
   return (
     
     <>
+
     <video
       autoPlay loop muted 
       style={{
@@ -39,21 +138,51 @@ export default function App() {
     >
       <source src={video} type="video/mp4" />
     </video>
+
+    <div>
     <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} loop={true} 
       autoplay={{ delay: 2000, disableOnInteraction:false}}
     coverflowEffect={{
-  "rotate": 60,
-  "stretch": 0,
-  "depth": 100,
-  "modifier": 1,
-  "slideShadows": true
-}} pagination={{dynamicBullets: true}} className="mySwiper">
-  <SwiperSlide>
-    <div class="container">
+    "rotate": 60,
+    "stretch": 0,
+    "depth": 100,
+    "modifier": 1,
+    "slideShadows": true
+    }} pagination={{dynamicBullets: true}} className="mySwiper">
+
+  <SwiperSlide onClick={modalOpen}>
+    <div class="container" >
     <img src="https://swiperjs.com/demos/images/nature-1.jpg" class="image" />
     <div class="overlay">Event 1</div>
     </div>  
   </SwiperSlide>
+  <Modal
+      show={show} 
+      onHide={modalClose}
+      scrollable={true}
+      style={{
+        position:"relative",
+        width:"100%",
+        left:"100%",
+        top:"100%",
+        bottom:"100%",
+        height:"100%",
+        objectFit:"cover",
+        transform:"translate(100%,100%)",
+      }}
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <h1>Event 1 Photos</h1>
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div>
+        <Gallery photos={PHOTO_SET} />
+        </div>
+      </Modal.Body>
+    </Modal>
+
   <SwiperSlide>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-2.jpg" class="image" />
@@ -103,7 +232,7 @@ export default function App() {
     </div>
   </SwiperSlide>
   </Swiper>
+  </div>
     </>
   )
-  
 }
