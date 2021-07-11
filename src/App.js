@@ -140,24 +140,7 @@ export default function App() {
       <source src={video} type="video/mp4" />
     </video>
 
-    <div>
-    <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} loop={true} 
-      autoplay={{ delay: 2000, disableOnInteraction:false}}
-    coverflowEffect={{
-    "rotate": 60,
-    "stretch": 0,
-    "depth": 100,
-    "modifier": 1,
-    "slideShadows": true
-    }} pagination={{dynamicBullets: true}} className="mySwiper">
-
-  <SwiperSlide onClick={modalOpen}>
-    <div class="container" >
-    <img src="https://swiperjs.com/demos/images/nature-1.jpg" class="image" />
-    <div class="overlay">Event 1</div>
-    </div>  
-  </SwiperSlide>
-  <Modal class="modal" id="Modal"
+    <Modal class="modal" id="Modal"
       show={show} 
       onHide={modalClose}
       scrollable={true}
@@ -187,53 +170,79 @@ export default function App() {
       </Modal.Body>
     </Modal>
 
-  <SwiperSlide>
+    <div>
+    <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} loop={true} 
+      autoplay={{ delay: 2000, disableOnInteraction:false}}
+    coverflowEffect={{
+    "rotate": 60,
+    "stretch": 0,
+    "depth": 100,
+    "modifier": 1,
+    "slideShadows": true
+    }} pagination={{dynamicBullets: true}} className="mySwiper">
+
+  <SwiperSlide onClick={modalOpen}>
+    <div class="container" >
+    <img src="https://swiperjs.com/demos/images/nature-1.jpg" class="image" />
+    <div class="overlay">Event 1</div>
+    </div>
+    <center>Event Name</center>  
+  </SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-2.jpg" class="image" />
     <div class="overlay">Event 2</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-3.jpg" class="image" />
     <div class="overlay">Event 3</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-4.jpg" class="image" />
     <div class="overlay">Event 4</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-5.jpg" class="image" />
     <div class="overlay">Event 5</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-6.jpg" class="image" />
     <div class="overlay">Event 6</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-7.jpg" class="image" />
     <div class="overlay">Event 7</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-8.jpg" class="image" />
     <div class="overlay">Event 8</div>
     </div> 
+    <center>Event Name</center>
   </SwiperSlide>
-  <SwiperSlide>
+  <SwiperSlide onClick={modalOpen}>
     <div class="container">
     <img src="https://swiperjs.com/demos/images/nature-9.jpg" class="image" />
     <div class="overlay">Event 9</div>
     </div>
+    <center>Event Name</center>
   </SwiperSlide>
   </Swiper>
   </div>
