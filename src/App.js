@@ -175,23 +175,24 @@ export default function App() {
       <div>
 
         <Swiper effect={'coverflow'} grabCursor={true} centeredSlides={true} slidesPerView={'auto'} loop={true}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          autoplay={{ delay: 2300, disableOnInteraction: false, pauseOnMouseEnter: true}}
+          
           coverflowEffect={{
             "rotate": 60,
             "stretch": 0,
             "depth": 100,
             "modifier": 1,
             "slideShadows": true
-          }} pagination={{ dynamicBullets: true }} className="mySwiper">
+          }} pagination={{ clickable: true }} className="mySwiper">
 
           {events.map(event => (
 
-            <SwiperSlide onClick={modalOpen}>
+            <SwiperSlide onClick={modalOpen} >
               <div class="container" >
                 <img src="https://swiperjs.com/demos/images/nature-1.jpg" class="image" />
                 <div class="overlay">{event.name}</div>
               </div>
-              <center>{event.name}</center>
+              <center >{event.name}</center>
             </SwiperSlide>
 
           ))}
